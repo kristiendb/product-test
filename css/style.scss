@@ -1,0 +1,114 @@
+@use "./base/reset";
+@use "./base/variables" as *;
+@use "./base/fonts";
+@use "./base/mixins" as *;
+
+body {
+  background-color: $beige;
+  font-family: "Montserrat", sans-serif;
+  color: $darkblue;
+  font-size: 14px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 175px;
+}
+.info {
+  height: 452px;
+  width: 320px;
+  background-color: $white;
+  border-radius: 0 9px 9px 0;
+  padding-left: 37px;
+  padding-right: 33px;
+  h1 {
+    font-family: "Fraunces", serif;
+    font-size: 30px;
+    color: black;
+  }
+  h2 {
+    padding: 35px 0 28px 0;
+  }
+  .description {
+    padding: 35px 25px 25px 0;
+    line-height: 24px;
+  }
+  .price {
+    font-family: "Fraunces", serif;
+    color: $green;
+    font-size: 28px;
+    padding-bottom: 43px;
+    position: relative;
+    span {
+      text-decoration: line-through;
+      color: $darkblue;
+      font-size: 14px;
+      font-family: "Montserrat", sans-serif;
+      padding-left: 22px;
+      position: absolute;
+      margin-top: 8px;
+    }
+  }
+  .button {
+    background-color: $green;
+    color: $white;
+    padding: 15px 63px 15px 89px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 300ms;
+    position: relative;
+    svg {
+      margin-top: 16px;
+      margin-right: 10px;
+      position: absolute;
+      margin: 0 0 0 -22px;
+    }
+    &:hover {
+      background-color: $darkgreen;
+    }
+  }
+}
+
+img {
+  height: 452px;
+  width: 320px;
+  border-radius: 9px 0 0 9px;
+}
+
+@media screen and (max-width: 730px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .image {
+    height: 243px;
+    width: 343px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    img {
+      scale: 1.5;
+    }
+  }
+
+  .info {
+    height: 372px;
+    width: 343px;
+    border-radius: 0 0 8px 8px;
+    h2 {
+      padding: 20px 0 15px 0;
+    }
+    .description {
+      padding: 10px 25px 15px 0;
+      line-height: 24px;
+    }
+    .price {
+      padding-bottom: 33px;
+    }
+    .button {
+      padding: 15px 80px 15px 100px;
+    }
+  }
+}
